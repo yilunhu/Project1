@@ -1,0 +1,66 @@
+﻿@model abcBank.Models.Account
+
+@{
+    ViewData["Title"] = "Withdraw";
+}
+
+<h2>Withdraw</h2>
+
+<h4>Account</h4>
+<hr />
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccountType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.overdraft)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.overdraft)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastAccess)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastAccess)
+        </dd>
+    </dl>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Withdraw">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AccountId" />
+            <div class="form-group">
+                <label for ="Withdraw">Amount Withdraw</label>
+                <input type="number" step="0.01" name="Withdraw" />
+                @*<input type="submit" />*@
+                @*<label asp-for="Balance" class="control-label">Withdraw</label>
+                <input asp-for="Balance" class="form-control" />
+                <span asp-validation-for="Balance" class="text-danger"></span>*@
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Confrim" class="btn btn-default" />
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

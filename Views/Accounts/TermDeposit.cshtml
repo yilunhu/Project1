@@ -1,0 +1,41 @@
+﻿@model abcBank.Models.Account
+@{
+    ViewData["Title"] = "TermDeposit";
+}
+
+<h2>TermDeposit</h2>
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccountType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.overdraft)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.overdraft)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastAccess)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastAccess)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Withdraw" asp-route-id="@Model.AccountId">Cash Account</a>
+    @*<a asp-action="Transfer" asp-route-id="@Model.AccountId">Transfer Balance</a>*@
+    <a asp-action="Index">Back to List</a>
+</div>

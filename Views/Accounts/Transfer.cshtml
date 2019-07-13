@@ -1,0 +1,64 @@
+﻿
+@model abcBank.Models.Account
+
+@{
+    ViewData["Title"] = "Transfer";
+}
+
+<h2>Transfer</h2>
+
+<h4>Account</h4>
+<hr />
+<div>   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AccountType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.overdraft)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.overdraft)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastAccess)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastAccess)
+        </dd>
+    </dl>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Transfer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AccountId" />
+            <div class="form-group">
+                <label for="transfer">Amount To Transfer: </label>
+                <input type="number" step="0.01" name="transfer" required/>
+            </div>
+            <div class="form-group">
+                    <label for="UserId">TargetId: </label>
+                    <input type="number" name="UserId" required/>
+            </div>
+            <div class="form-group">
+                 <input type="submit" value="Confrim" class="btn btn-default" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

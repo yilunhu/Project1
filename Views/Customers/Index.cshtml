@@ -1,0 +1,39 @@
+﻿@model  abcBank.Models.Customer
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Customer Index</h2>
+<p>
+    <a asp-controller="Accounts" asp-action="Create" asp-route-id="@Model.CustId"> Create Account</a>
+    <a asp-controller="Accounts" asp-action="Index" asp-route-id="@Model.CustId" > View Account</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LastName)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@Model.CustId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@Model.CustId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@Model.CustId">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
